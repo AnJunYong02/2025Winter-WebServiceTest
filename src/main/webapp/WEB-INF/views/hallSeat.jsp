@@ -51,7 +51,7 @@
 <div class="seat-container">
     <% for (int i = 1; i <= 30; i++) { %>
     <button type="button" class="seat" data-seat-number="<%= i %>"
-            <%= (i == 5 || i == 13 || i == 19) ? "disabled class='seat reserved'" : "" %>>
+            <%= (i == 5 || i == 13 || i == 19 || i==23 || i==27) ? "disabled class='seat reserved'" : "" %>>
         <%= i %>
     </button>
     <% } %>
@@ -90,7 +90,7 @@
         if (selectedSeat) {
             // 부모 창의 입력 필드에 선택한 좌석 번호 전달
             if (window.opener) {
-                window.opener.document.getElementById("selectedSeat").value = selectedSeat;
+                window.opener.document.getElementById("seatNum").value = selectedSeat;
                 window.opener.document.getElementById("selectedSeatDisplay").textContent = `선택된 좌석: ${selectedSeat}`;
             }
             // 현재 창 닫기

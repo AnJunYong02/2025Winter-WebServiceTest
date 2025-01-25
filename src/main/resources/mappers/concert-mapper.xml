@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="Concert">
+
     <!-- 모든 공연 리스트 갖고오기-->
     <select id="getAllConcerts" resultType="ConcertVO">
         SELECT * FROM CONCERT
@@ -21,23 +21,20 @@
     </insert>
 
     <!-- 공연 수정 -->
-    <update id="editConcert" parameterType="ConcertVO">
-        UPDATE CONCERT
-        SET brand = #{brand}, model = #{model}, fuel = #{fuel},
-        price = #{price}, year = #{year}, distance = #{distance}, fileName = #{fileName}
+    <update id="update" parameterType="ConcertVO">
+        UPDATE CONCERT SET clubName = #{clubName}, concertName = #{concertName},
+        concertDate = #{concertDate}, runningTime = #{runningTime}, fileName = #{fileName}
         WHERE id = #{id}
     </update>
 
     <!-- 공연 삭제 -->
-    <delete id="deleteConcert" parameterType="int">
+    <delete id="delete" parameterType="int">
         DELETE FROM CONCERT WHERE id = #{id}
     </delete>
 
-    <!-- 자동차 검색 -->
-    <select id="searchCar" parameterType="String" resultType="ConcertVO">
-        SELECT * FROM CAR WHERE model LIKE CONCAT('%', #{keyword}, '%')
+    <!-- 공연 검색 -->
+    <select id="searchConcert" parameterType="String" resultType="ConcertVO">
+        SELECT * FROM CONCERT WHERE concertName LIKE CONCAT('%', #{keyWord'}, '%')
     </select>
-
-
 </mapper>
 

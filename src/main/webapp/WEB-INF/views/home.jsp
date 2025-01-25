@@ -5,7 +5,6 @@
     <%@include file="inc/header.jsp"%>
     <meta charset="UTF-8">
     <title>공연 예약 시스템</title>
-
 </head>
 <body>
 <div class="split-container">
@@ -30,7 +29,7 @@
     <!-- 오른쪽: list -->
     <div class="right-page">
         <img
-                src="https://cdn.hankyung.com/photo/202312/01.35342154.1.jpg"
+                src="https://www.acc.go.kr/include/main/images/perform/img_sub0602.jpg"
                 alt="공연 예약 이동 페이지"
                 class="background-image"
         />
@@ -38,7 +37,7 @@
             <h2 class="title">공연 예약하러 가기</h2>
             <hr class="line">
             <p class="subtitle">Booking a concert<br> </p>
-            <p class="description">나랑 같이 공연 보러갈래? -이재용-</p>
+            <p class="description">나랑 같이 공연 보러갈래요?</p>
             <a href="${pageContext.request.contextPath}/concert/list">
                 <button class="action-btn">공연 예약하기</button>
             </a>
@@ -64,28 +63,6 @@
         display: flex;
         height: 100vh; /* 화면 전체 높이 */
         width: 100%;
-    }
-
-    /* 회사 로고 */
-    .logo-container {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        display: flex;
-        align-items: center;
-        z-index: 10;
-    }
-
-    .logo-image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .company-name {
-        font-size: 1.5rem;
-        font-weight: bold;
     }
 
     /* 왼쪽 및 오른쪽 섹션 */
@@ -119,7 +96,7 @@
 
     .title {
         font-size: 2.5rem;
-        color: #007acc;
+        color: green;
         margin-bottom: 10px;
     }
 

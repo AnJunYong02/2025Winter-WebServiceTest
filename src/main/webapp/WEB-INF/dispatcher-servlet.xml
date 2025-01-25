@@ -12,16 +12,16 @@
     <context:component-scan base-package="com.example.reserve" />
     <mvc:resources mapping="/images/**" location="/images/"/>
 
-<!--    <bean id="loginCheckInterceptor" class="com.example.reserve.Util.LoginCheckInterceptor" />-->
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**"/>-->
-<!--            <mvc:exclude-mapping path="/resources/**"/>-->
-<!--            <mvc:exclude-mapping path="/images/**"/>-->
-<!--            <mvc:exclude-mapping path="/login/**"/>-->
-<!--            <ref bean="loginCheckInterceptor" />-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
+    <bean id="loginCheckInterceptor" class="com.example.reserve.Util.LoginCheckInterceptor" />
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/resources/**"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <mvc:exclude-mapping path="/login/**"/>
+            <ref bean="loginCheckInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!--view Resolver 설정-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

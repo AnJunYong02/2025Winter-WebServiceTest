@@ -38,8 +38,9 @@
 <body>
 <div class="container">
     <div class="form-container mx-auto mt-5 col-md-6">
-        <h2 class="mb-4 text-center">Create new Concert!</h2>
+        <h2 class="mb-4 text-center">공연 등록하기</h2>
         <form action="${pageContext.request.contextPath}/concert/create" method="post" enctype="multipart/form-data">
+
             <%--항목 입력--%>
             <div class="mb-3">
                 <label for="clubName" class="form-label">동아리 이름</label>
@@ -53,7 +54,7 @@
 
             <div class="mb-3">
                 <label for="concertDate" class="form-label">공연 날짜</label>
-                <input type="date" class="form-select" id="concertDate" name="concertDate" required>
+                <input type="date" class="form-control" id="concertDate" name="concertDate" required>
             </div>
 
             <div class="mb-3">
@@ -62,18 +63,10 @@
                 <hr>
             </div>
 
-<%--            <!-- 선택된 좌석 정보 표시 및 입력 -->--%>
-<%--            <div>--%>
-<%--                <span id="selectedSeatDisplay">선택된 좌석: 없음</span>--%>
-<%--                <input type="hidden" class="form-control" id="selectedSeat" name="selectedSeat" value="">--%>
-<%--                <button type="button" class="btn btn-secondary" onclick="openSeatSelection()">좌석 선택</button>--%>
-<%--            </div>--%>
-<%--            <br>--%>
-
-        <%-- 이미지 추가 부분 --%>
+        <%--이미지 추가 부분--%>
             <div class="mb-3">
                 <label for="image" class="form-label">공연 포스터</label>
-                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileInput(this)" required>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" onchange="validateFileInput(this)" >
             </div>
 
             <div class="d-grid">
@@ -82,13 +75,7 @@
         </form>
     </div>
 </div>
-
-<%--<script>--%>
-<%--    function openSeatSelection() {--%>
-<%--        window.open("${pageContext.request.contextPath}/concert/hallSeat", "좌석 선택", "width=500,height=500");--%>
-<%--    }--%>
-<%--</script>--%>
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<%@ include file="inc/footer.jsp" %>

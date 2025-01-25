@@ -9,8 +9,13 @@
         SELECT userId, userPw FROM USER WHERE userId = #{userId} AND userPw = #{userPw}
     </select>
 
-    <select id="insertUser" resultType="UserVO">
-        INSERT INTO USER (userId, userName, concertName, concertDate, seatNum)
-        VALUES (#{userId}, #{userName}, #{concertName}, #{concertDate}, #{seatNum});
+    <!--User 갖고오기-->
+    <select id="getUserById" parameterType="string" resultType="UserVO">
+        SELECT * FROM USER WHERE userId = #{userId}
+    </select>
+
+    <select id="updateUser" resultType="UserVO">
+        UPDATE USER SET userName = #{userName}, concertName = #{concertName}, concertDate = #{concertDate}, seatNum = #{seatNum}
+        WHERE userId = #{userId}
     </select>
 </mapper>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+    <title>공연 예약 시스템</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -32,7 +32,7 @@
 
         .header-nav a {
             text-decoration: none;
-            color: #333;
+            color: green;
             font-size: 1.5rem;
             font-weight: bold;
             padding: 0 15px;
@@ -64,7 +64,7 @@
         <div class="header-logo d-flex align-items-center">
             <a href="${pageContext.request.contextPath}/home" style="text-decoration: none;">
                 <img src="https://blogs.nvidia.co.kr/wp-content/uploads/sites/16/2024/11/%ED%99%94%EB%A9%B4-%EC%BA%A1%EC%B2%98-2024-11-20-114218.png" alt="Company Logo">
-                <span style="font-size: 1.3rem; font-weight: bold; color: rgba(0,84,52,0.72);">'젠슨 황' 공연 예약 시스템</span>
+                <span style="font-size: 1.3rem; font-weight: bold; color: rgba(0,84,52,0.72);">YONGVIDIA</span>
             </a>
         </div>
 

@@ -9,11 +9,18 @@ public class UserRepository {
     @Autowired
     SqlSession sqlSession;
 
+    //사용자 정보 가져오기
     public UserVO getUser(UserVO vo){
         return sqlSession.selectOne("User.getUser", vo);
     }
 
-    public void saveUserReservation(UserVO userVo){
-        sqlSession.insert("User.insertUser", userVo);
+    //아이디로 사용자 정보 가져오기
+    public UserVO getUserById(String id){
+        return sqlSession.selectOne("User.getUserById", id);
+    }
+
+    //사용자 정보 업데이트
+    public void updateUser(UserVO userVo){
+        sqlSession.update("User.updateUser", userVo);
     }
 }

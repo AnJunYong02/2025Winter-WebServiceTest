@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* 전체 레이아웃 */
-        .buy-home-container {
+        .concert-home-container {
             display: flex;
             justify-content: space-between;
             width: 100%;
@@ -33,7 +33,7 @@
             font-size: 2.0rem;
             margin-left: 15px;
             margin-top: 10px;
-            color: #ff5a5a;
+            color: #000000;
             font-weight: bold;
         }
 
@@ -73,7 +73,7 @@
         .underline {
             border: 0;
             height: 2px;
-            background-color: #e60000;
+            background-color: #7f00e6;
             margin: -15px 0 15px 0;
         }
 
@@ -107,6 +107,7 @@
 
         .search-bar h3 {
             font-size: 1.2rem;
+            margin-top: 40px;
             margin-bottom: 10px;
             font-weight: bold;
         }
@@ -141,7 +142,7 @@
 </head>
 
 <body>
-<div class="buy-home-container">
+<div class="concert-home-container">
     <!-- 공연 목록 -->
     <div class="con-list-container">
         <div class="con-list-title-container">
@@ -154,18 +155,14 @@
             <c:forEach var="con" items="${concerts}">
                 <div class="con-item">
                     <div class="con-image">
-                        <a href="${pageContext.request.contextPath}/con/view/${con.id}">
+                        <a href="${pageContext.request.contextPath}/concert/view/${con.id}">
                             <img src="${pageContext.request.contextPath}${con.fileName}" class="con-img-top con-image" alt="Con Image">
                         </a>
                         <hr class="underline">
                     </div>
 
                     <div class="con-info">
-                        <h3>진행 동아리 : ${con.clubName}</h3>
-                        <h3>공연 이름 : ${con.concertName}</h3>
-                        <h3>공연 이름 : ${con.concertName}</h3>
-                        <h3>공연 이름 : ${con.concertName}</h3>
-                        <h3>공연 이름 : ${con.concertName}</h3>
+                        <h3>${con.clubName} <${con.concertName}></h3>
                         <p class="con-date">${con.concertDate}</p>
                         <p class="con-details"> 러닝타임 : ${con.runningTime}분</p>
                     </div>
@@ -174,19 +171,17 @@
         </div>
     </div>
 
-    <!-- 검색 및 필터 기능 -->
+    <!-- 검색 기능 -->
     <div class="search-bar">
-        <h3>차량 Model 검색</h3>
+        <h3>공연 이름 검색하기</h3>
         <form action="${pageContext.request.contextPath}/concert/search" method="get">
-            <input type="text" class="search-name-input" name="keyword"
-                   placeholder="공연 이름을 입력" value="${param.keyword}">
+            <input type="text" class="search-name-input" name="keyWord"
+                   placeholder="공연 이름을 입력" value="${param.keyWord}">
             <button type="submit" class="btn btn-outline-primary">검색</button>
         </form>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 <%@ include file="inc/footer.jsp" %>
